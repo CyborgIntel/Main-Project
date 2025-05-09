@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <link href="Yapper.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div>
+                <h1> Hangman Game</h1>
+                <img src="images/Hangmanbase1.png">
+                <input type="text" id="letter" name="first_name" placeholder="Enter Letter">
+
+                <button name="button">Enter</button>
+                <p class="hidden"></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const typeletter = document.getElementById('letter');
+    const full = document.querySelector('[name= button]');
+    const  firstdeath = document.getElementById('1');
+    const seconddeath = document.getElementById('2');
+    const thirddeath = document.getElementById('3');
+    const fourthdeath = document.getElementById('4');
+    const deathElement = document.getElementById('death');
+
+   // firstdeath.addEventListener('change', function (e) {
+    //    deathElement.src = "HangmanHead2.png"  ;
+   // });
+
+   // seconddeath.addEventListener('change', function (e) {
+   //     deathElement.src = "HangmanHeadTorso3.png"  ;
+    // });
+
+   // thirddeath.addEventListener('change', function (e) {
+   //      deathElement.src = "HangmanLeftLeg4.png"  ;
+    });
+
+    fourthdeath.addEventListener('change', function (e) {
+       deathElement.src = "HangmanRightLeg5.png"  ;
+    // });
+
+
+    full.addEventListener('click', function (e){
+        console.log("test")
+        let letter = typeletter.value;
+        const sentance = document.createElement('h1');
+        sentance.innerHTML = ` ${letter} `;
+        content.appendChild(sentance);
+        typeletter.value = "";
+
+    })
+
+</script>
+</body>
+</html>
