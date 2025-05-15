@@ -42,10 +42,18 @@
     const answerwrong = document.getElementById('death')
     const prompt = document.getElementById('prompt');
     const image = document.getElementById('image');
+    let incorrectAnswers = 0;
 
    function buildSentence(){
        let listAnswer = answer.split("")
        let listprompt = []
+
+
+       let letter = typeletter.value.toUpperCase();
+       if(!listAnswer.includes(letter)){
+            addLimb();
+       }
+
        for(let i = 0; i < listAnswer.length; i++){
            let currentLetter = listAnswer[i].toUpperCase();
            if(possibleLetters.includes(currentLetter) && !guessedLetters.includes(currentLetter)){
@@ -64,12 +72,10 @@
    }
 
    function addLimb() {
-       let listAnswer = answer.split("")
-       for (let i = 0; i < listAnswer.length; i++) {
-           let currentLetter = listAnswer[i].toUpperCase();
-           if (typeletter.value.includes(unwantedLetters)) {
-               image.src = "images/HangmanHead2.png";
-           }
+       incorrectAnswers++;
+       if (incorrectAnswers === 9){
+           //YOU LOSE
+       } else if (incorrectAnswers === 8){
 
        }
    }
