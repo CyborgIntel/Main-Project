@@ -35,11 +35,9 @@
     const answer = "You’ve cat to be kitten me!".toUpperCase();
     let guessedLetters = [];
     let possibleLetters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
-    let unwantedLetters = "dfghjlpqrswxz".toUpperCase().split("")
     const content = document.querySelector('.content');
     const typeletter = document.getElementById('letter');
     const enterbutton = document.querySelector('[name=button]');
-    const answerwrong = document.getElementById('death')
     const prompt = document.getElementById('prompt');
     const image = document.getElementById('image');
     let incorrectAnswers = 0;
@@ -73,10 +71,25 @@
 
    function addLimb() {
        incorrectAnswers++;
-       if (incorrectAnswers === 9){
+       if (incorrectAnswers === 9) {
            //YOU LOSE
-       } else if (incorrectAnswers === 8){
-
+           image.src = 'images/HangmanMouth10.png'
+       } else if (incorrectAnswers === 8) {
+           image.src = 'images/HangmanLeftEye9.png'
+       } else if (incorrectAnswers === 7) {
+           image.src = 'images/HangmanLeftEye8.png'
+       } else if (incorrectAnswers === 6) {
+           image.src = 'images/HangmanRArm7.png'
+       } else if (incorrectAnswers === 5) {
+           image.src = 'images/HangmanLArm6.png'
+       } else if (incorrectAnswers === 4) {
+           image.src = 'images/HangmanRightLeg5.png'
+       } else if (incorrectAnswers === 3) {
+           image.src = 'images/HangmanLeftLeg4.png'
+       } else if (incorrectAnswers === 2) {
+           image.src = 'images/HangmanHeadTorso3.png'
+       } else if (incorrectAnswers === 1) {
+           image.src = 'images/HangmanHead2.png'
        }
    }
 
