@@ -43,7 +43,7 @@
    function buildSentence(){
        let listAnswer = answer.split("")
        let listprompt = []
-       // This makes the sentence answer split in order and into letters.
+       // This makes the answer sentence split in order and into letters.
        let letter = typeletter.value.toUpperCase();
        if(!listAnswer.includes(letter)){
             addLimb();
@@ -102,7 +102,7 @@
    }
 
     enterbutton.addEventListener('click', function (e){
-        // This is the Enter Button! Each time you input a letter
+        // This is the Enter Button! After each time you input a letter
         // it clears the box and adds your letter to the "Letters Used:" section.
         let letter = typeletter.value.toUpperCase();
         addNewGuess();
